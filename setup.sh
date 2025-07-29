@@ -18,9 +18,9 @@ echo "admin:adminpass" | chpasswd
 usermod -aG sudo admin
 
 # Harden SSH server
-sed -i 's/^#*PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
-sed -i 's/^#*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
-sed -i 's/^#*Port.*/Port 2222/' /etc/ssh/sshd_config
+sed -i "s/^#*PermitRootLogin.*/PermitRootLogin no/" /etc/ssh/sshd_config
+sed -i "s/^#*PasswordAuthentication.*/PasswordAuthentication no/" /etc/ssh/sshd_config
+sed -i "s/^#*Port.*/Port 2222/" /etc/ssh/sshd_config
 
 # enable and start ssh
 systemctl enable ssh
